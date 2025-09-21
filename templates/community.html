@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>커뮤니티 게시판</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f8;
+      color: #2c3e50;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #db8a10;
+    }
+
+    .post {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .write-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #e03a3e;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏀 NBA 커뮤니티 게시판</h1>
+  <a href="/community/write" class="write-btn">✏️ 글 작성하기</a>
+
+  {% for post in posts %}
+  <div class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+  </div>
+  {% else %}
+  <p>아직 작성된 글이 없습니다.</p>
+  {% endfor %}
+</body>
+</html>
